@@ -1,0 +1,966 @@
+<html>
+	<head>
+		<title> Basco </title>
+		<link rel="icon" type="image/x-icon" href="iil_logo.png">
+		<style>
+			.hide {
+				display: none;
+			}
+			body {
+				background-image: url('Sabtang_Batanes.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
+				overflow-x: hidden;
+				backdrop-filter: blur(0px) saturate(100%) brightness(10%);
+				margin: -10px;
+				padding-bottom: 20px;
+			}
+			
+			header {
+				position: fixed;
+				left: 50%;				
+			}
+			.hdr {
+				z-index: 1;
+				padding: ;
+				border-bottom: none;
+				box-shadow: 0px -2px 20px 2px black;
+				background-color: rgba(0,0,0,1);
+				position: sticky ;
+				top: 0;
+				top-margin: -20px;
+				padding-top: 0.02px;
+				padding-left: 30px;
+				padding-right: 30px;
+				line-height: 0.1;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+
+				
+			}
+			
+			.inttxt {
+				text-align: justify;
+				position: static;
+				top: 100px;
+				line-height: 2;
+				color: white; 
+				font-size: 15px;
+				font-family: verdana;
+				padding: 10px;
+				margin-left: 20px;
+				margin-right: 20px;
+				background-color: rgba(0,0,0,0);
+				border: solid rgba(0,0,0,0) 2px;
+				height: 325px;
+				width: 475px;
+			}
+			.inttxt2 {
+				text-align: justify;
+				position: static;
+				top: 100px;
+				line-height: 2;
+				color: white; 
+				font-size: 15px;
+				font-family: verdana;
+				padding: 10px;
+				margin-top: -9px;
+				margin-bottom: 15px;
+				background-color: rgba(0,0,0,0);
+				border: solid rgba(0,0,0,0) 2px;
+				height: 325px;
+				width: 980px;
+			}
+					
+			
+			.clrbtn {
+				font-size: 15px;
+				color: white;
+				border: none;
+				background-color: rgba(0,0,0,0);
+				cursor: pointer;
+				transition: all 0.2s;
+				float: left;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			.clrbtn:hover {
+				color: #ff12a8;
+				background-color: rgb(255,255,255,0);
+				border: solid #ff12a8 1px;
+			}
+			.bbtn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba(0,0,0,1);
+				box-shadow: 0px -2px 20px 2px black;
+				color: white;
+				font-size: 20px;
+				border-radius: 10%;
+				border: solid black 1px;
+				height: 60px;
+				width: 100px;
+								
+			}
+			.bbtn:hover {
+				border: solid #ff12a8 1px;
+				color: #ff12a8;
+				box-shadow: 0px -2px 20px 2px #ff12a8;
+			}
+			
+			.bb {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.ab {
+				display: grid;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.txtch {
+				color: white;
+				font-family: 'Courier New', monospace;
+				text-align: center;			
+			}
+			.imgh {
+				height: 210px;
+				width: 300px;
+				border-radius: 2%;
+				box-shadow: 0px -2px 20px 2px black;
+				margin-right: 40px;
+				margin-top: 40px;
+				margin-left: 40px;
+				transition: all 0.1s;
+			}				
+			.imgh:hover {
+				cursor: pointer;
+				display: flex;
+				height: 220px;
+				width: 310px;
+				border-radius: 2%;
+				transform: translate(0px,5px);
+				box-shadow: 0px -2px 20px 2px #ff12a8;
+				margin-right: 35px;
+				margin-top: 30px;
+				margin-left: 35px;
+				
+			}
+			
+			.inf {
+				margin-top: 50px;
+				display: none;
+			}
+			.infimg {
+				height: 350px;
+				width: 500px;
+				border-radius: 2%;
+			}
+			.inftxt {
+				text-align: justify;
+				color: white;
+				font-family: verdana;
+				font-size: 15px;
+				line-height: 2;
+				background-color: rgba(0,0,0,0);
+				border: solid rgba(0,0,0,0) 2px;
+				height: 325px;
+				width: 475px;
+			}
+			.inftxt2 {
+				text-align: justify;
+				position: static;
+				top: 100px;
+				line-height: 2;
+				color: white; 
+				font-size: 15px;
+				font-family: verdana;
+				padding: 10px;
+				margin-top: 2px;
+				margin-bottom: -50px;
+				background-color: rgba(0,0,0,0);
+				border: solid rgba(0,0,0,0) 2px;
+				height: 325px;
+				width: 1015px;
+			}
+			.infttl {
+				color: white;
+				font-size: 50px;
+				font-family: Copperplate, Papyrus, fantasy;
+				margin-bottom: 20px;
+				margin-top: -20px;
+				text-align: center;
+			}
+			
+			.but {
+				background-color: rgb(0,0,0,0.6);
+				color: white;
+				border: none;
+				border-radius: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: all 0.2s;
+			}
+			.but:hover {
+				 color: #ff12a8;
+				 position: relative;
+				 transform: translate(0px,-3px);
+				 box-shadow: 0px 3px 0px 0px #ff12a8;
+				 cursor: pointer;
+				 background-color: rgb(0,0,0,0.7);
+				 border: solid #ff12a8 1px;
+			}
+		</style>
+		                       
+		<script>	
+			function strt(intro, slc) {
+				intro.style.display = "none";
+				slc.style.display = "block";
+				document.getElementById('2txt').style.display = "block";
+				
+			}
+			
+			function ivn() {
+				alert("By Laganzon, Ivan Isaac B.");
+			}
+			
+			function bck() {
+				var a  = document.getElementById('slc');
+				var bbtn = document.getElementById('bbtn'); 
+				var blh = document.getElementById('blh');
+				var vbb = document.getElementById('vbb');
+				var mi = document.getElementById('mi');
+				var djt = document.getElementById('djt');
+				var vrh = document.getElementById('vrh');
+				var tc = document.getElementById('tc');
+
+				
+				if (blh.style.display === "block") {
+					blh.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				else if (vbb.style.display === "block") {
+					vbb.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				else if (mi.style.display === "block") {
+					mi.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				else if (djt.style.display === "block") {
+					djt.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				else if (vrh.style.display === "block") {
+					vrh.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				else if (tc.style.display === "block") {
+					tc.style.display = "none";
+					a.style.display = "block";
+					bbtn.style.display = "none";
+					document.getElementById('2txt').style.display = "block";
+				}
+				
+			}
+			
+			function shblh(inf, slc, bbtn) {			
+				inf.style.display = "block";
+				slc.style.display = "none";
+				bbtn.style.display = "flex";
+				document.getElementById('2txt').style.display = "none";
+			}
+
+			function home(homee, intro, slc, bbtn) {
+				var blh = document.getElementById('blh');
+				var vbb = document.getElementById('vbb');
+				var mi = document.getElementById('mi');
+				var djt = document.getElementById('djt');
+				var vrh = document.getElementById('vrh');
+				var tc = document.getElementById('tc');
+			
+				homee.style.display = "block";
+				intro.style.display = "none";
+				slc.style.display = "none";
+				bbtn.style.display = "none";
+				blh.style.display = "none";
+				vbb.style.display = "none";
+				mi.style.display = "none";
+				djt.style.display = "none";
+				vrh.style.display = "none";
+				tc.style.display = "none";
+				document.getElementById('2txt').style.display = "block";
+			}
+			
+			function vst(intro, homee) {
+				intro.style.display = "block";
+				homee.style.display = "none";
+			}
+			
+			function info(homee, intro, slc, bbtn) {
+				var blh = document.getElementById('blh');
+				var vbb = document.getElementById('vbb');
+				var mi = document.getElementById('mi');
+				var djt = document.getElementById('djt');
+				var vrh = document.getElementById('vrh');
+				var tc = document.getElementById('tc');
+			
+				homee.style.display = "none";
+				intro.style.display = "block";
+				slc.style.display = "none";
+				bbtn.style.display = "none";
+				blh.style.display = "none";
+				vbb.style.display = "none";
+				mi.style.display = "none";
+				djt.style.display = "none";
+				vrh.style.display = "none";
+				tc.style.display = "none";
+				document.getElementById('2txt').style.display = "block";
+			}
+			
+			function ts(homee, intro, slc, bbtn) {
+				var blh = document.getElementById('blh');
+				var vbb = document.getElementById('vbb');
+				var mi = document.getElementById('mi');
+				var djt = document.getElementById('djt');
+				var vrh = document.getElementById('vrh');
+				var tc = document.getElementById('tc');
+				
+				homee.style.display = "none";
+				intro.style.display = "none";
+				slc.style.display = "block";
+				bbtn.style.display = "none";
+				blh.style.display = "none";
+				vbb.style.display = "none";
+				mi.style.display = "none";
+				djt.style.display = "none";
+				vrh.style.display = "none";
+				tc.style.display = "none";
+				document.getElementById('2txt').style.display = "block";
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+		<div class="hdr"> <!--header-->
+			<div class="bb">
+				<img src="iil_logo.png" onclick="ivn()" style="border: solid white 1px; height: 25px; width: 25px; position: relative; left: -940px;">
+				<p style="font-family: 'Courier New', monospace; color: white; font-size: 20px; position: relative; left: -930px;  "> CWP PerfT </p> 
+				<div style="display: inline-block; background-color: ; margin-top: -20px; margin-bottom: 0px;">
+					<button class="clrbtn" onclick="ts(homee, intro, slc, bbtn)" style="position: ;"> Tourist Spots </button>
+					<button class="clrbtn" onclick="info(homee, intro, slc, bbtn)" style="position: ;"> Info </button>
+					<button class="clrbtn" onclick="home(homee, intro, slc, bbtn)" style="position: ;"> Home </button>
+				</div>
+			</div> 
+		</div> 
+		
+		<div id="homee" style="display: block; margin-bottom: 200px;"> <!--Home-->
+			<center style="margin: 50px;"> 
+				<p style="
+					color: white;
+					font-size: 50px;
+					margin-bottom: 5;
+					font-family: Copperplate, Papyrus, fantasy;
+				"> Basco </p>
+				<img src="bb2.jpg" style="height: 245px; width: 350px; box-shadow: 0px -2px 20px 2px black; border-radius: 2%;">
+				<p style="
+					color: white;
+					font-size: 20px;
+					font-family: verdana;
+					margin-top: 30px;
+					margin-bottom: 30px;
+				"> 
+					Basco, officially the Municipality of Basco, is a 5th class municipality <br> and capital of the province of
+					Batanes, Philippines.
+				</p>
+				<button onclick="vst(intro, homee)" class="but" style="
+					height: 50px;
+					width: 200px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				"> 
+					<p style="font-size: 12.5px;"> LEARN MORE &nbsp; </p>
+					<p style="font-size: 25px;"> &nbsp;> </p> 
+				</button>
+			</center>
+		</div>
+		
+		<div id="intro" style="display: none; margin-bottom: 200px;"> <!--intro-->
+			<center style="margin: 50px;"> 
+				<p id="txt" style="color: white; font-family: optima, sans-serif; font-size: 50px; margin-bottom: 20px;"> Basco </p>
+				<div id="intr" class="ab">
+					<div id="ir1" class="bb" style="">
+						<div id="img1">
+							<img src="dsc_0959.jpg" style="height: 350px; width: 500px; box-shadow: 0px -2px 20px 2px black; border-radius: 2%;">
+						</div>
+						<div id="txt1">
+							 <p class="inttxt" style="position: relative; top: -8px;">
+								In the 2020 census, it had a population of 9,517 people. Basco is located on Batan
+								Island, the second largest among the Batanes Islands, the northernmost islands of the Philippines. As a 
+								capital town it is the center of governance, religious, education and business activities so people 
+								flock here for many reasons. This town was founded in 1785 (but named Basco in 1783) by the Spanish 
+								missionaries and officials of the Spanish government who started the civilization and Christianization 
+								of Batanes. The history of Basco began with the arrival of sea-rowing Malays in the area. They set up settlements in 
+							the Northern portion of what is known before as Basay Island and now Batan Island. From 
+							</p>
+						</div>
+					</div>
+					<div id="ir2">
+						<p id="txt2" class="inttxt2" style="position: relative; top: -1px;">
+							1783 to 1897, 
+							Batanes was a sub-province of Cagayan with Basco as the capital town. The town is named after Capitán
+							General José Basco, who led the pacification and conquest of the islands during his term as Governor-General.
+							In the 19th Congress of the Philippines, house bills were filed by various representatives which seeks Basco
+							including other capital towns of provinces with no current component cities, independent component cities or
+							highly urbanized cities to automatically convert into cities. The municipality has a land area of 49.46
+							square kilometres (19.10 sq mi) constituting 22.58% of the 219.01-square-kilometre- (84.56 sq mi) total area
+							of Batanes. Basco is politically subdivided into 6 barangays. Each barangay consists of puroks and some have
+							sitios. The sitio of Diptan was converted into a barrio, known as San Antonio, in 1955. Also in the same
+							year, the sitios of Coral, Hago, Tuva, Diojango, Canalaan, Honaan and Dimnalamay were converted into the
+							barrio of San Joaquin. Basco has a tropical monsoon climate (Köppen climate classification Am). Compared
+							to cities down south such as Laoag or Manila, it has a slightly cooler temperatures especially during the
+							winter months due to its northerly location. According to the 2015 Census, the age group with the highest population in Basco is 10 to 14, with 
+							874 individuals. Conversely, the age group with the lowest
+						</p>
+					</div>
+					<div id="ir3" class="bb" style="position: relative; top: -30px;">
+						<div id="txt3">
+							 <p class="inttxt" style="position: relative; top: -20px;">
+								  population is 75 to 79, with 130 individuals.
+								Combining age groups together, those aged 14 and below, consisting of the young dependent population
+								which include infants/babies, children and young adolescents/teenagers, make up an aggregate of 28.08% 
+								(2,409). Those aged 15 up to 64, roughly, the economically active population and actual or potential 
+								members of the work force, constitute a total of 64.65% (5,546). Finally, old dependent population consisting of the senior citizens, those aged 65 and over, total 7.27% 
+								(624) in all. The computed Age Dependency Ratios mean that among the population of Basco, there are 43
+								youth dependents to every 100 of the working age population; there
+							</p>
+						</div>
+						<div id="img2">
+							<img src="bb1.jpg" style="height: 350px; width: 500px; box-shadow: 0px -2px 20px 2px black; border-radius: 2%;">
+						</div>
+					</div>
+					<div id="ir4">
+						<p id="txt4" class="inttxt2" style="position: relative; top: -45px;">
+							 are 11 aged/senior citizens to every
+								100 of the working population; and overall, there are 55 dependents (young and old-age) to every 100 of
+								the working population. The median age of 27 indicates that half of the entire population of Basco are 
+							aged less than 27 and the other half are over the age of 27. The population of Basco grew from 2,347 in 
+							1903 to 9,517 in 2020, an increase of 7,170 people over the course of 117 years. The latest census figures
+							in 2020 denote a positive growth rate of 2.21%, or an increase of 938 people, from the previous population 
+							of 8,579 in 2015. The total number of registered voters or electorate in Basco for the year 2019 was 5,535,
+							broken down into 2,568 males and 2,967 females. The municipal center of Basco is situated at approximately
+							20° 27' North, 121° 58' East, in the island of Batan. Elevation at these coordinates is estimated at 23.4
+							meters or 76.8 feet above mean sea level. Based on the great-circle distance (the shortest distance between
+							two points over the surface of the Earth), the cities closest to Basco are Laoag, Ilocos Norte, Batac,
+							Ilocos Norte, Tuguegarao, Cagayan, Tabuk, Kalinga, Vigan, Ilocos Sur, and Ilagan, Isabela. The nearest municipalities are Mahatao, Batanes, Ivana, Batanes, Uyugan, Batanes, Sabtang, Batanes, 
+								Itbayat, Batanes, and Calayan, Cagayan. Its distance from the national capital is 657.04 kilometers
+								(408.27 miles). The following list delineates such distance measurements. Basco is one of the youngest 
+								land formation of the 
+						</p>
+					</div>
+					<div id="ir5" class="bb" style="position: relative; top: -30px;">
+						<div id="img3">
+							<img src="bb3.jpg" style="height: 350px; width: 500px; box-shadow: 0px -2px 20px 2px black; border-radius: 2%;">
+						</div>
+						<div id="txt5" style="position: relative; top: -30px;">
+							 <p class="inttxt">
+								   Batanes archipelago having risen from the sea out of the many eruptions of the 
+								composite volcanoes near each other which we now call Mt. Iraya. This was during the Quatenary Period 
+								or 2 to 1 million years ago. The eruptions of Mt. Iraya is responsible for connecting Basco to the town
+								of Mahatao which is the next point of our tour. This town was founded in 1785 (but named Basco in 1783) by the Spanish missionaries and officials of the Spanish
+							government who started the civilization and Christianization of Batanes. Before their coming , our ancestors 
+							lived in settlements in the forests and Ijangs or hill fortresses usually near water sources. Over there at the 
+							eastside is one of the Ijangs of Basco, Notice how the side here is not accessible and has only one entrance at 
+							the 
+							</p>
+						</div>
+					</div>
+					<div id="ir6" style="position: relative; top: -25px; height: 250px;">
+						<p id="txt6" class="inttxt2">
+							 other side. That is for maximum security. At the top most are piles of rounded andesite stones as weapons for 
+							enemies that dared come near. Below is the next level of their community and near the base are the caillanes or 
+							common people who do the food production. Notice too, how our fields are bounded by hedgerows of trees or reeds.
+							They serve both as boundaries, protection from the winds and sea-sprays and serve as food and wood sources while 
+							projecting an overall quilt- like pattern beautifying our farms in the process. When the Spaniards came they
+							gathered us in one place and arranged the streets and houses neatly and in an orderly manner. What you see in 
+							our towns in Batanes was the town planning work of the Spaniards. We were under the Spanish government for 169 
+							years from 1719 to 1888, a rule which was of Christanization and civil governance and education and not of 
+							militarization and oppression.
+						</p>
+					</div>
+					
+				</div>
+					<button id="lgbtn" class="but" onclick="strt(intro, slc)" style="
+						height: 50px;
+						width: 400px;
+						font-size: 15px;
+					">
+						<p style="transform: scale(1,1)"> Places to go in Basco! </p>
+					</button>
+			</center>
+		</div>
+		<div id="slc" style="display: none; margin-bottom: 200px;"> <!--places-->
+			<center>
+				<p id="2txt" style="
+					color: white;
+					font-family: 
+					optima, sans-serif; 
+					font-size: 50px;
+					display: block;
+					margin-bottom: -10px;
+					margin-top: 30px;
+				"> Top Sights in Basco </p>
+			</center>
+			<div style="display: grid; align-items: center; justify-content: center;">
+				<div id="r1" class="bb" style="display: ;">
+					<div id="dp1">
+						<img id="p1" class="imgh" onclick="shblh(blh, slc, bbtn)" src="blh.jpg">
+						<p class="txtch"> Basco Lighthouse </p>
+					</div>
+					<div id="dp2"> 
+						<img id="p2" class="imgh" onclick="shblh(vbb, slc, bbtn)" src="vbb.jpg">
+						<p class="txtch"> Valugan Boulder Beach </p>
+					</div>
+					<div id="dp3">
+						<img id="p3" class="imgh" onclick="shblh(mi, slc, bbtn)" src="mi.jpg">
+						<p class="txtch"> Mount Iraya </p>
+					</div>
+				</div>
+				
+				<div id="r2" class="bb">
+					<div id="dp4">
+						<img class="imgh" onclick="shblh(djt, slc, bbtn)" src="djt.jpg">
+						<p class="txtch"> Dipnaysupuan Japanese Tunnel </p>
+					</div>
+					<div id="dp5">
+						<img class="imgh" onclick="shblh(vrh, slc, bbtn)" src="vrh.jpg">
+						<p class="txtch"> Vayang Rolling Hills </p>
+					</div>
+					<div id="dp6">
+						<img class="imgh" onclick="shblh(tc, slc, bbtn)" src="tc.jpg">
+						<p class="txtch"> Tukon Chapel </p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="inf" style="display: ; "> <!--info-->
+			<div id="blh" class="inf">
+				<div class="ab">
+					<p class="infttl"> Basco Lighthouse </p>
+					<div class="bb">
+						<img class="infimg" src="blh.jpg">
+						<p class="inftxt" style="margin-left: 40px; position: relative; top: -15px;"> 
+							Basco Lighthouse is a lighthouse in the town of Basco in Batanes, the northernmost province in the 
+							Philippines. Located in Naidi Hills in Barangay San Antonio, the lush green hills and the open sea 
+							provide a beautiful backdrop for the lighthouse. The place can easily be reached by a 1.2-km hike 
+							from the Port of Basco. Basco Lighthouse is one of the three lighthouses proposed by former 
+ 							Congressman Florencio Abad of Batanes, not only as working lighthouses, but possibly as tourist 
+							attractions. The other two are in Sabtang and Mahatao. The Basco structure was the first completed 
+							in 2003. The location chosen is where the first lighthouse of Basco was built.
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							It was also the site of the
+							American period telegraph facilities that connected Batanes with the central government until it 
+							was destroyed by the Japanese Imperial Army bombings at the start of World War II. A few of the 
+							buildings survived and some have been converted into businesses like a café - resulting from the 
+							area becoming popular because of the lighthouse. The structure is a 6-story building with a gallery
+							or viewing deck on the fifth floor. Located next to the 66 feet (20 m) tower is a dwelling of 
+							vernacular architecture. Traditional Ivatan houses are made with stone or rubble masonry. The 
+							viewing deck is a perfect location to view the whole of Batan Island (the main island where Basco
+							is located) from end to end, including Mount Iraya. One can also have a clear view of Sabtang
+							Island in the south of Basco and Itbayat Island to the north. Standing at 66 feet, the Basco 
+							Lighthouse towers over the island of Batan and is one of the three main lighthouses in the province 
+							of Batanes. It has also served as a guide for the local fisherfolk since it was constructed in 2003.
+						</p>
+					</div>
+					<div class="bb">
+						<p class="inftxt" style="position: relative; top: -15;"> 
+							This six-story structure also houses a viewing deck on its fifth floor, which provides a fantastic
+							360-degree view of the West Philippine Sea, Mt. Iraya, and the Basco town proper. Standing at 66 
+							feet, the Basco Lighthouse towers over the island of Batan and is one of the three main lighthouses
+							in the province of Batanes. It has also served as a guide for the local fisherfolk since it was 
+							constructed in 2003. This six-story structure also houses a viewing deck on its fifth floor, which 
+							provides a fantastic 360-degree view of the West Philippine Sea, Mt. Iraya, and the Basco town proper.
+							It's recommended to visit the lighthouse in the summer season, which usually starts in March and ends
+							in the latter weeks of May.
+						</p>
+						<img class="infimg" src="blh2.jpg" style="margin-left: 40px;">
+					</div>
+					<div>
+						<p class="inftxt2" style="height: 50px;">
+							During these months, there are fewer chances of rainfall, so you can better enjoy the fantastic view 
+							of Batanes from the lighthouse's viewing deck.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="vbb" class="inf">
+				<div class="ab">
+					<p class="infttl"> Valugan Boulder Beach </p>
+					<div class="bb">
+						<img class="infimg" src="vbb.jpg">					
+						<p class="inftxt" style="margin-left: 40px;"> 
+							The Valugan Boulder Beach is a three-kilometer beach located along the coast of Batan Island.
+							As its name suggests, the beach's shore is made up of different-sized boulders that help create 
+							an incredible landscape framed by almost vertical cliffs and rolling hills. The boulders here were
+							said to have been coughed out from the guts of by Mt. Iraya, a nearby active volcano. What used to
+							be rough andesite rocks were slowly polished by the tides and the restless waves over. From the beach,
+							only the loud whistling of the wind and constant rumbling of the Pacific can be heard as the waves 
+							come slapping the shore. 
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							Surprisingly, the beach makes for a relaxing setting especially during sunrise. While it is a beach,
+							swimming is not allowed due to the area's rough terrain. Bringing home any stones from the beach is 
+							also prohibited. It is best to visit this beach in the dry or summer season, which usually starts in
+							March and ends in the latter weeks of May. There are smaller chances of rainfall as well during these
+							months, so you can better enjoy the view from the beach. The beach is known for its smooth boulders that
+							line the shoreline, which stretches for miles. Unlike most pebble beaches, the pebbles on Valugan—aptly
+							called boulders—are enormous in size. The boulders are said to have originated from Mount Iraya, a nearby
+							active volcano. It’s a masterpiece created by the elements. In 400 AD, Mt. Iraya erupted and scattered 
+							andesite rocks around the northern half of Batan, which is now Basco, from the fiery guts of the earth.
+							The Pacific’s mighty winds pushed the waves to lap the rough rocks, polishing it in the process.
+							The result: a boulder beach that we now call Valugan. Valugan means “east” in the Ivatan language.
+						</p>
+					</div>
+					<div class="bb">
+						<p class="inftxt" style="position: relative; top: -15;">
+							Boulders fill the jagged eastern edge of Batan Island like marbles recklessly dumped in a corner. The 
+							elements here are at war. The wind is whistling, the sea slapping the shore, and sharp cliffs breaking 
+							the tides. Yet, there is something so trance-inducing about the whole action. Like the ironically named 
+							ocean it faces, Valugan Beach is absolutely pacifying. Valugan Beach was the first stop on my first day
+							in Batanes, an unforgettable welcome. I stood on one of the boulders and watched the fierce waves sweep 
+							the sea. Every now and then, a splash of water shot toward me, and I would immediately hide the camera 
+							under my shirt. The sun was just as harsh at that time as the tour started a little later than usual.
+						</p>
+						<img class="infimg" src="vbb2.jpg" style="margin-left: 40px;">
+					</div>
+					<div>
+						<p class="inftxt2" style="height: 60px;">
+							Going around the beach is difficult and a bit risky, but bordering the strip of boulders are much more 
+							sole-friendly carpets of grass. A trail southward leads to a bend with small pebbles, not boulders. The
+							waves are also less violent in this part, albeit still not recommended for swimming.
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="mi" class="inf">
+				<div class="ab">
+					<p class="infttl"> Mount Iraya </p>
+					<div class="bb">
+						<img class="infimg" src="mi.jpg">
+						<p class="inftxt" style="margin-left: 40px"> 
+							Mount Iraya, is a dormant stratovolcano on Batan Island and the highest point in the province  
+							of Batanes, Philippines.
+							Mount Iraya is one of two volcanoes located on Batan Island in the province of Batanes. It is 
+							also the highest point in Batanes, with an elevation of 1,009 meters, and the northernmost 
+							active volcano in the country. It last erupted back in 1454. Mount Iraya is a landmark of 
+							great importance and legend for the Ivatans. Iraya is located on Batan Island, one of the 
+							Batanes Islands, in the province of Batanes, in the Luzon Strait, north of the island of Luzon,
+							in the Philippines.It is the northernmost active volcano in the Philippines.
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							Iraya is a heavily forested stratovolcano, with an elevation of 1,009 metres (3,310 ft) asl,
+							and a base diameter of 5,500 metres (18,000 ft). Adjacent volcanic edifice is Mount Matarem.
+							Mount Iraya last erupted in 1454, and the Philippine Institute of Volcanology and Seismology 
+							(PHIVOLCS) considers it as one of the active volcanoes in the Philippines. In 1998, volcanologists
+							recorded seismic swarms which led them to form a monitoring network on Batan Island for several 
+							months. After the swarms of tremors had diminished, the temporary stations in Barangay San Joaquin
+							in Basco, Batanes and another near the crater, were pulled out. Seismicity or any activity relating
+							to Iraya is still monitored by the Basco Seismological Station. Mount Iraya is a sacred mountain
+							for the Ivatan people. There are two contrasting tales regarding the mountain, the first tale states
+							that the mountain is a mother overlooking her children (the Ivatans) for their protection, while the
+							second tale states that if a ring of clouds appear on top of the mountain, Iraya is notifying the 
+							people for preparation due to an inevitable death of an elder, usually due to natural causes. 
+						</p>
+					</div>
+					<div class="bb">
+						<p class="inftxt" style="position: relative; top: -15;">
+							Dubbed
+							as the "Mountain of Winds", Mt. Iraya stands majestically in the northern part of Batan Island in
+							the province of Batanes. Witness Mount Iraya standing at an Elevation of 1,009m (3,310ft) bestowing 
+							upon it's majestic peak unto the people pondering upon. This volcano has been an attraction to many
+							people since it mysteriously magnetize the hearts of the people drawing their attention to it's wide 
+							forest ranges suitable enough for hiking. From the peak, you can look unto the the endless sea and the
+							boundless blue sky. The morphologically young Iraya volcano is the most prominent feature of the 
+							20-km-long Batan island. It has a 1.5-km-wide summit crater largely filled by a younger cone that forms 
+							the present-day summit.
+						</p>
+						<img class="infimg" src="mi2.jpg" style="margin-left: 40px;">
+					</div>
+					<div>
+						<p class="inftxt2" style="height: 90px; margin-top: 30px;">
+							There are three volcanoes on Batan Island. Iraya volcano is located in the north of the island and has 
+							been active since Late Pleistocene. Mahatao volcano is the oldest and was active until the late Miocene
+							(ca. 5 million years ago), and forms the center of Batan Island. Matarem volcano in the south was
+							active until about 2 million years ago (early Pleistocene).  
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div id="djt" class="inf">
+				<div class="ab">
+					<p class="infttl"> Dipnaysupuan Japanese Tunnel </p>
+					<div class="bb">
+						<img class="infimg" src="djt.jpg">
+						<p class="inftxt" style="margin-left: 40px"> 
+							The Japanese Dipnaysupuan Tunnel is an underwater tunnel network in the Philippines, Tukon Hills,
+							Basque Country. During the Japanese occupancy of the Philippines until World War II, it served as a
+							shelter for the imperial Japanese forces. The Japanese imperial forces forced the Ivatans, due to 
+							their strategic position, to dig tunnels for refuge at Tukon Hills. In these tunnels, the Japanese
+							soldiers hid for years before the end of World War II. Bring a torchlight into the tunnels in 
+							Dipnaysupuan to see the 4 rooms, a bunker, a guard posting, and a hollow serving as a reservoir of 
+							water. Also, wear good headgear inside when available to prevent rocks from hitting. 							
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							There is a long descent to the tunnels such that sneakers or climbing sandals are best worn if 
+							possible. Most chambers were feeling a bit bleak. A tricycle trip from Basco town to Dipnaysupuan
+							Japanese Tunnel is the quickest route. It is also highly recommended to join a Batanes guided tour
+							that includes this tourist spot for a more convenient trip. This is an all-year-round destination
+							and is open from 8 AM to 4 PM. The Japanese tunnel was created back in World War II era supposedly
+							by Filipino prisoners of war. The purpose of the tunnel was to be a hideout not only for soldiers
+							but also their belongings. It has been said that many tunnels were actually dug back then during or
+							soon after the United States took over Davao City. From 1941 to 1945, the soldiers ordered the 
+							Ivatans to dig the tunnel, creating five exit points, chambers, bunkers, and water reservoir. The
+							bunker served as their lookout spot while in battle with the Americans. The tunnel, meanwhile, is
+							250-meter long and has a lower deck chamber. Inside, you’ll find nothing but rocks, small holes, and
+							shattered tunnel walls. Some entrance points have cement above to protect the tunnel from the 
+							bombings during the war. Dipnaysupuan served as a camp and shelter of Japanese troops who were 
+							fighting in the strategically important Batanes islands during their occupation of the Philippines. 
+						</p>
+					</div>
+					<div class="bb" style="margin-top: 60px;">
+						<p class="inftxt" style="position: relative; top: -15;">
+							These tunnels were a witness to days and months of constant bombardment from both sides; but the 
+							structure outlasted the dark period in Batanes’s history. Dipnaysupuan Japanese tunnel is an
+							interconnected network of tunnels in Tukon Hills, Basco, Batanes, the Philippines. It served as a
+							shelter for the Japanese imperial forces during the Japanese occupation in the Philippines until the
+							end of World War II.
+						</p>
+						<img class="infimg" src="djt2.jpg" style="margin-left: 40px;">
+					</div>
+				</div>
+			</div>
+			
+			<div id="vrh" class="inf">
+				<div class="ab">
+					<p class="infttl"> Vayang Rolling Hills </p>
+					<div class="bb">
+						<img class="infimg" src="vrh.jpg">
+						<p class="inftxt" style="margin-left: 40px; position: relative; top: 30px;"> 
+							The Vayang Rolling Hills are one of the most picturesque sights in the Batanes province. 
+							Covered in verdant grass and patches of green trees, the hills are a perfect spot to relax
+							and take in the province's serene and laidback atmosphere. Aside from the sea of green, you
+							can also enjoy an unobstructed view of the majestic Mt. Iraya, Batan Island, Sabtang Island,
+							Itbayat Island, and the West Philippine Sea from the the Vayang Rolling Hills. As you stroll
+							along the hills, you may also find various goats and cows grazing on the grass as many parts
+							of Vayang are farmland. 
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							Similar with the rest of the province, the best time to visit the Vayang Rolling Hills is 
+							during the dry or summer season. This usually begins in March and ends in the latter weeks of 
+							May or early June. It is also recommended to visit around 5 PM when the sun begins to set to
+							see the sky turn a warm shade of orange over the hills and islands. The hills offer beautiful
+							and stunning views of verdant grass and deep blue sea. The surroundings are covered with color
+							green - the hills, trees, and grass. The environment is very relaxing to the eyes; you can 
+							think and dream peacefully while looking at the clouds. The clouds have different shapes and sizes
+							the air is refreshing because of the cool breeze coming from the sea. You can also see some cows
+							that are eating and dogs that are running. The place has a good weather and environment. Vayang 
+							Rolling Hills is one of the most popular Batanes tourist spots. Batanes is a remote island in North
+							of the Philippines. There are 3 islands habited: Batan, Itbayat and Sabtang. Basco is the biggest
+							town and the population around Batanes are 17 000 people. There are many Batanes tourist spots and
+							we will discover for you in our full  Batanes travel guide. If you want to get to Vayang Rolling
+							Hills from the town you can go by tricycle or as part as a day tour in Batanes. You will have to 
+							get a tricycle for a day tour from Basco.
+						</p>
+					</div>
+					<div class="bb" style="margin-top: 60px;">
+						<p class="inftxt" style="position: relative; top: -15;">
+							Prices are around 1000 PHP for 2 people. And they will show you a few spots. You can even go 
+							walking from the town since is only 1.5 kilometers distance. You can also rent a bicycle 30 PHP
+							per hour and mountain bike 600 PHP for the whole day. If you want to get to Batanes you have
+							to take a plane from Manila or Clark in Pampanga. It will take more than an hour to reach there.
+							Philippines Airlines and Cebu Pacific are offering flights.
+						</p>
+						<img class="infimg" src="vrh2.jpg" style="margin-left: 40px;">
+					</div>
+				</div>
+			</div>
+			
+			<div id="tc" class="inf"> 
+				<div class="ab">
+					<p class="infttl"> Tukon Chapel </p>
+					<div class="bb">
+						<img class="infimg" src="tc.jpg">
+						<p class="inftxt" style="margin-left: 40px; position: relative; top: -17.5px;"> 
+							Mt. Carmel Chapel, also known as Tukon Church, was first established on May 3, 2008, at Sitio
+							Tukon, Barangay Chanarian, Batanes. It adopted the design of a traditional Ivatan house made
+							of stone walls, making it the only chapel embodying such design.
+							Mt. Carmel Chapel also manifests solemnity and tranquility as it perfectly sits on top of a
+							hill, overlooking the lush greenery of Batanes, as well as the Pacific Ocean and the West 
+							Philippine Sea. The Abads are the most prominent and the most powerful family in Batanes. 
+							They held many political posts in the province for decades. Fundacion Pacita Batanes Nature 
+							Lodge, a high-end resort hotel nestled in a nearby hill, also belongs to the clan. 
+						</p>
+					</div>
+					<div>
+						<p class="inftxt2">
+							It was they who spearheaded the  project, but the community contributed a lot to the 
+							construction of the church that it also becomes a showcase of the building tradition and 
+							creative talent of the locals. Local craftsmen, masons and carpenters built the church, whose 
+							design is inspired by the traditional Ivatan stone houses . Architects Joven Ignacio and Tina
+							Turralba helped complete the design. Covering
+							the ceiling are large images of the patron saints standing in front of the churches of the six 
+							municipalities of Batanes, painted by scholars of the Pacita Abad Center for the Arts. The
+							stained glass windows and the hardwood pews are contributions from the Abads’ friends and family.
+							he church was officially opened on 3 May 2008, in time for the wedding of Rep. Abad’s daughter 
+							Julia, who is also the  Presidential Chief of Staff, married Englishman Andrew Parker. Tukon 
+							Chapel sits humbly atop a foothill, an eye-catcher made of stone as though offered by the 
+							greenery to the restless skies. Tukon means “mountain” in the Ivatan language, an apt name as it
+							covers generally rugged terrain that lies in the shadow of Mt. Iraya. From here, one can admire
+							the mischievous waves of both the West Philippine Sea and the roaring Pacific. Under the 
+							supervision of Architects Joven Ignacio and Tina Turralba, local carpenters, craftsmen and masons
+							slowly built this house of worship in Basco, Batanes.
+						</p>
+					</div>
+					<div class="bb" style="margin-top: 60px;">
+						<p class="inftxt" style="position: relative; top: -15;">
+							If you plan to get married in this pristine perfect and picturesque backdrop of Batanes’ scenic
+							and breathtaking site, then you may like to check out the Marriage Requirements. 
+							The chapel is perfect for couples who want to have a romantic and a small intimate matrimonial
+							 ceremony. A short walk from the chapel, one can tour the PAGASA Weather Station (popularly known
+							 as Tukon Radar Station). The station was a lighthouse before and also used as a weather station
+							 by the United States. One can have a good sight of the beautiful seascape of the West Philippine 
+							 Sea and the Pacific Ocean from here. One can take a direct flight going to Basco, Batanes from
+							 Manila through PAL Express and Skyjet Airlines.
+						</p>
+						<img class="infimg" src="tc2.jpg" style="margin-left: 40px;">
+					</div>
+					<div>
+						<p class="inftxt2" style="height: 110px;">
+							Tourists can also take a flight going to Laoag from Manila.
+							There are several airline companies that serve the Laoag-Manila route which includes Philippine
+							Airlines, Cebu Pacific, Zest Airways and Air Philippines. From Laoag, you need to take another 
+							flight going to the Basco airport through SkyPasada or Batanes Airlines. Upon reaching Basco
+							airport, tourists can take a tricycle ride going to the chapel.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bbtn" class="bb" style="margin-top: 50px; display: none; margin-bottom: 200px;"> <!--back button-->
+			<button class="but" onclick="bck()" style="
+				height: 50px;
+				width: 200px;
+			"> 
+				<p style="
+					font-size: 30px;
+					transform: scale(1,1.2)
+				"> <&nbsp; </p>
+				<p style="margin-left: 3px;"> Back </p>
+
+			</button>
+		</div>
+		<div style="
+			border-top: solid black 3px;
+			font-family: 'Courier New', monospace;
+			height: 150px;
+			width: 100%;
+			background-color: #030303;
+			box-shadow: 0px 2px 20px 2px black;
+			position: relative;
+			display: flex;
+			justify-content: flex-left;
+			align-items: center; 
+
+		"> <!--footer-->
+			<img src="iil_logo.png" onclick="ivn()" style="
+				border: solid white 1px; 
+				height: 100px; 
+				width: 100px; 
+				position: relative;
+				left: 35px;
+			">
+				<p style="
+					color: white;
+					position: relative;
+					left: 45px; 
+					top: -40px; 
+				"> By Laganzon, Ivan Isaac B. </p>
+			<div style="
+				position: relative;
+				left: 100px;
+				top: -15px;
+			"> 
+				<p style="
+					color: white;
+					position: relative;
+					left: 0px; 
+					top: 0px; 
+				"> Contacts </p>
+				<p style="
+					color: rgb(255,255,255,0.5); 
+					font-size: 11.5px;
+					position: relative;
+					left: 0px; 
+					top: 0px; 
+				"> 09455306226 </p>
+				<p style="
+					color: rgb(255,255,255,0.5); 
+					font-size: 11.5px;
+					position: relative;
+					left: 0px; 
+					top: 0px; 
+				"> laganzon.ii@gmail.com </p>
+			</div>
+		</div>
+		<div style="
+			border-top: solid white 1px;
+			font-family: 'Courier New', monospace;
+			height: 25px;
+			width: 100%;
+			background-color: #050505;
+			box-shadow: 0px 2px 20px 2px black;
+			position: absolute;
+			display: flex;
+			justify-content: center;
+			align-items: center; 
+			color: white;
+		">
+			©2023
+		</div>
+
+	</body>
+</html>
